@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bebas+Neue&family=Yanone+Kaffeesatz:wght@200&display=swap');
+
+:root {
+  --title-aqua-color: #64eebc;
+  --text-white-color: #ffffff;
+}
+
+.main_container {
+  font-family: "Bebas Neue", cursive;
+  color: var(--text-white-color);
+}
+
+.image {
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: -10px;
+  z-index: -10;
+  animation: back-load 10s;
+}
+
+.second_container {
+  position: fixed;
+  bottom: 15%;
+  left: 10%;
+}
+
+.subtitle {
+font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 4px;
+}
+
+.movie_title {
+  color: var(--title-aqua-color);
+  font-size: 120px;
+  letter-spacing: 20px;
+  font-weight: bold;
+}
+
+.button_container {
+  display: flex;
+  gap: 60px;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.button_container > button {
+  width: 248px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-white-color);
+  font-family: "Bebas Neue";
+}
+
+.button_app_play {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 4px;
+  background-color: #242424;
+  border: none;
+}
+
+.button_app_list {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 4px;
+  background-color: rgba(255, 255, 255, 0.075);
+  border: 1px solid var(--text-white-color);
+}
+
+@keyframes back-load {
+  0% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
