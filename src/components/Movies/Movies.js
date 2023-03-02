@@ -61,7 +61,8 @@ const Movies = () => {
         </div>
       </div>
 
-      <div className={style.movies_list}>
+      {
+        dropdown === "POPULARES" ? <div className={style.movies_list}>
         {movies?.slice(0, 4).map((element, index) => {
           return (
             <div
@@ -91,7 +92,8 @@ const Movies = () => {
             </div>
           );
         })}
-      </div>
+      </div> : <></>
+      }
     </div>
   );
 };
