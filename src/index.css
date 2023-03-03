@@ -2,3 +2,69 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.dropdown_container {
+  position: absolute;
+  padding: 0px;
+  top: 50px;
+  height: 0rem;
+  transition: all 0.7s;
+  overflow-y: hidden;
+}
+.view {
+  padding: 10px;
+  height: 7rem;
+}
+
+
+
+.hide_add_movie{
+  height: 0;
+  width: 100vw;
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  transition: all 1s;
+}
+
+.show_add_movie{
+    height: 100vh;
+}
+
+.image_input {
+  position: relative;
+  height: 120px;
+  border: 2px dashed #d0d7de;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.image_upload {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1000;
+  background-color: rgb(248, 244, 244);
+}
+
+.on_drag {
+  background-color: #d0d7de34;
+}

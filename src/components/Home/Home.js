@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./styles.module.css";
 import { allMovies } from "../../controllers/movies";
 import back from "../../img/back1.png";
@@ -6,8 +6,11 @@ import NavBar from "../NavBar/nav";
 import { AiOutlinePlus } from "react-icons/ai";
 import {FiPlay} from 'react-icons/fi'
 import Movies from "../Movies/Movies";
+import AddMovie from "../AddMovie/AddMovie";
 
 const Home = () => {
+
+
 
   return (
     <div className={style.main_container}>

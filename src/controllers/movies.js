@@ -10,3 +10,14 @@ export const allMovies = async (setMovies, setError) => {
     setError(error);
   }
 };
+
+export const handlerClick = (id, classname) => {
+  const dropdown = document.getElementById(id);
+  console.log(dropdown.className);
+
+  if (dropdown.className.includes(classname)) {
+    dropdown.classList.remove(classname);
+  } else {
+    dropdown.className += ` ${classname}`;
+  }
+};

@@ -39,13 +39,34 @@
   animation: arrow_animate 1s;
 }
 
-.dropdown_container {
-  position: absolute;
-  padding-left: 20px;
-  right: 0;
-  top: 50px;
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  font-family: "Barlow Condensed", sans-serif;
   background-color: #242424;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  padding: 0 0px 0px 10px;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 4px;
+}
+
+.dropdown > p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.point {
+  color: #242424;
+  position: absolute;
+  top: 2px;
+  right: 15px;
+  height: 7px;
 }
 
 .movies_list {

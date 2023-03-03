@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
-import "./style.css"
-import { allMovies } from "../../controllers/movies";
+import "../../index.css"
+import { allMovies, handlerClick } from "../../controllers/movies";
 import {AiFillStar } from "react-icons/ai";
 import {BiChevronDown} from "react-icons/bi"
 import {BsSuitDiamondFill} from "react-icons/bs"
@@ -13,35 +13,28 @@ const Movies = () => {
   const [error, setError] = useState();
   const [dropdown, setDropdown] = useState("POPULARES");
 
-  const handlerClick = () => {
-    const dropdown = document.getElementById("dropdown");
-    const point = document.getElementById("point");
 
-    if (dropdown.className.includes("view")) {
-        point.classList.remove('viewd')
-      dropdown.classList.remove("view");
-    } else {
-        dropdown.className += " view";
-        point.className += " viewd"
-    }
-  };
 
   useEffect(() => {
     allMovies(setMovies, setError);
+
   }, []);
 
   return (
     <div className={style.main_container}>
       <div className={style.container_select}>
         <p>VER: </p>
-        <p onClick={() => handlerClick()} className={style.selected}>
+        <p
+          onClick={() => handlerClick("dropdown_container", "view")}
+          className={style.selected}
+        >
           {dropdown}
           <BiChevronDown className={style.arrow_icon} size={25}></BiChevronDown>
         </p>
       </div>
-      <div className={style.dropdown_container}>
-        <div id="dropdown" className="dropdown">
-          <div id="point" className="point">
+      <div id="dropdown_container" className="dropdown_container">
+        <div className={style.dropdown}>
+          <div className={style.point}>
             <BsSuitDiamondFill></BsSuitDiamondFill>
           </div>
           <p
@@ -61,39 +54,41 @@ const Movies = () => {
         </div>
       </div>
 
-      {
-        dropdown === "POPULARES" ? <div className={style.movies_list}>
-        {movies?.slice(0, 4).map((element, index) => {
-          return (
-            <div
-              className={style.movie_container}
-              key={index}
-              style={{
-                backgroundImage: `url('https://image.tmdb.org/t/p/w300/${element.poster_path}')`,
-              }}
-            >
-              <div className={style.movie_main_container}>
-                <div className={style.movie_title}>
-                  <div className={style.play_icon_div}>
-                    <RxPlay className={style.play_icon}></RxPlay>
-                  </div>
-                  <p className={style.title}>{element.original_title}</p>
-                </div>
-                <div className={style.display_info}>
-                  <div className={style.movie_info}>
-                    <div>
-                      <AiFillStar className={style.icon}></AiFillStar>
-                      <p>{element.vote_average}</p>
+      {dropdown === "POPULARES" ? (
+        <div className={style.movies_list}>
+          {movies?.slice(0, 4).map((element, index) => {
+            return (
+              <div
+                className={style.movie_container}
+                key={index}
+                style={{
+                  backgroundImage: `url('https://image.tmdb.org/t/p/w300/${element.poster_path}')`,
+                }}
+              >
+                <div className={style.movie_main_container}>
+                  <div className={style.movie_title}>
+                    <div className={style.play_icon_div}>
+                      <RxPlay className={style.play_icon}></RxPlay>
                     </div>
-                    <p>{element.release_date.slice(0, 4)}</p>
+                    <p className={style.title}>{element.original_title}</p>
+                  </div>
+                  <div className={style.display_info}>
+                    <div className={style.movie_info}>
+                      <div>
+                        <AiFillStar className={style.icon}></AiFillStar>
+                        <p>{element.vote_average}</p>
+                      </div>
+                      <p>{element.release_date.slice(0, 4)}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div> : <></>
-      }
+            );
+          })}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
