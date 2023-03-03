@@ -14,7 +14,6 @@ const Movies = () => {
   const [dropdown, setDropdown] = useState("POPULARES");
 
 
-
   useEffect(() => {
     allMovies(setMovies, setError);
 

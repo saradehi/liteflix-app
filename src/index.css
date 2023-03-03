@@ -16,10 +16,8 @@ body {
   height: 7rem;
 }
 
-
-
-.hide_add_movie{
-  height: 0;
+.hide_add_movie {
+  height: 0vh;
   width: 100vw;
   backdrop-filter: blur(5px);
   position: fixed;
@@ -35,8 +33,8 @@ body {
   transition: all 1s;
 }
 
-.show_add_movie{
-    height: 100vh;
+.show_add_movie {
+  height: 100vh;
 }
 
 .image_input {
@@ -67,4 +65,25 @@ body {
 
 .on_drag {
   background-color: #d0d7de34;
+}
+
+.container_bar2{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  animation: charging 3500ms;
+}
+
+.error_charge{
+  background-color: red;
+}
+
+@keyframes charging {
+  from{
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+  
 }

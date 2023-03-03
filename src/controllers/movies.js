@@ -13,11 +13,28 @@ export const allMovies = async (setMovies, setError) => {
 
 export const handlerClick = (id, classname) => {
   const dropdown = document.getElementById(id);
-  console.log(dropdown.className);
 
   if (dropdown.className.includes(classname)) {
     dropdown.classList.remove(classname);
   } else {
     dropdown.className += ` ${classname}`;
+  }
+};
+
+export const changeImage = (event, setCharging, setBackgroundColor, setCharged) => {
+  if (event.target.files[0] !== undefined) {
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = (element) => {
+      element.preventDefault();
+      setCharging(true);
+      setBackgroundColor("#64eebc");
+      if (element.target.result.includes("image")) {
+        setCharged(true);
+      } else {
+        setCharged(false);
+        setTimeout(() => setBackgroundColor("red"), 3300);
+      }
+    };
   }
 };
