@@ -11,11 +11,6 @@ import { handlerClick } from "../../controllers/movies";
 
 const NavBar = () => {
 
-  // const handlerClickAddMovie = () => {
-  //   const add_movie = document.getElementById("show_add_movie");
-
-  //   if()
-  // }
 
   return (
     <nav className={style.main_container}>
@@ -23,7 +18,7 @@ const NavBar = () => {
         <AddMovie></AddMovie>
       </div>
       <div className={style.second_container}>
-        <div >
+        <div className={style.app_name_container}>
           <span className={style.app_name}>LITE</span>
           <span className={style.app_name2}>FLIX</span>
         </div>

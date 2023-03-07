@@ -41,13 +41,14 @@ const AddMovie = () => {
     <div className={style.background_blur}>
       <div className={style.main_container}>
         <span
-        className={style.span_main}
+          className={style.span_main}
           onClick={() => {
             handlerClick("hide_add_movie", "show_add_movie");
             setCharging(false);
             setCharged("");
             setResult("Error");
             setTitle("");
+            setSuccess(false);
           }}
         >
           <RxCross1 className={style.close_icon}></RxCross1>
@@ -86,7 +87,11 @@ const AddMovie = () => {
                 />
                 <div className={style.input_text_info}>
                   <HiPaperClip className={style.clip_icon}></HiPaperClip>
-                  <span>AGREGÁ UN ARCHIVO O ARRASTRALO Y SOLTALO AQUÍ</span>
+                  <span>
+                    {window.screen.width < 800
+                      ? "AGREGÁ UN ARCHIVO"
+                      : "AGREGÁ UN ARCHIVO O ARRASTRALO Y SOLTALO AQUÍ"}
+                  </span>
                 </div>
               </div>
             ) : (
@@ -139,15 +144,32 @@ const AddMovie = () => {
             >
               SUBIR PELÍCULA
             </button>
+            {window.screen.width < 800 && (
+              <button
+                type="button"
+                onClick={() => {
+                  handlerClick("hide_add_movie", "show_add_movie");
+                  setCharging(false);
+                  setCharged("");
+                  setResult("Error");
+                  setTitle("");
+                }}
+                className={style.close_button}
+              >
+                SALIR
+              </button>
+            )}
           </>
         ) : (
-          <>
+          <div className={style.success_info_gap}>
             <p className={style.p_success}>
               LITE<span>FLIX</span>
             </p>
 
             <p className={style.p_subtitle}>¡Felicitaciones!</p>
-            <span className={style.success_message}>{title} FUE CORRECTAMENTE SUBIDA</span>
+            <span className={style.success_message}>
+              {title} FUE CORRECTAMENTE SUBIDA
+            </span>
             <button
               type="button"
               onClick={() => {
@@ -156,12 +178,13 @@ const AddMovie = () => {
                 setCharged("");
                 setResult("Error");
                 setTitle("");
+                setSuccess(false);
               }}
               className={style.upload_button}
             >
               IR A HOME
             </button>
-          </>
+          </div>
         )}
       </div>
     </div>

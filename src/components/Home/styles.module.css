@@ -43,6 +43,10 @@
   font-weight: bold;
 }
 
+.movie_title>p{
+  margin: 0;
+}
+
 .button_container {
   display: flex;
   gap: 60px;
@@ -146,5 +150,11 @@
 
   .button_app_list{
     background-color: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie_title{
+    font-size: 60px;
   }
 }

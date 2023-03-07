@@ -9,7 +9,7 @@ body {
     top: -20px;
     left: -115px;
     height: 0rem;
-    transition: all 0.7s;
+    transition: all 0.5s;
     overflow-y: hidden;
     z-index: 100;
 }
@@ -32,7 +32,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .show_add_movie {
@@ -89,3 +89,4 @@ body {
   }
   
 }
+

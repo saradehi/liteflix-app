@@ -25,7 +25,9 @@ const Home = () => {
               LITEFLIX
             </span>
           </div>
-          <div className={style.movie_title}>BABYLON</div>
+          <div className={style.movie_title}>
+            <p>BABYLON</p>
+          </div>
           <div className={style.button_container}>
             <button className={style.button_app_play}>
               <FiPlay size={15}></FiPlay> REPRODUCIR

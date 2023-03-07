@@ -1,6 +1,6 @@
 /* var in home styles */
 .main_container {
-  padding: 35px 80px;
+  padding: 35px;
   display: flex;
   justify-content: space-between;
   width: 80vw;
@@ -10,7 +10,7 @@
 .other {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 15%;
   color: var(--text-white-color);
 }
 
@@ -31,6 +31,7 @@
 }
 
 .add_movie {
+  width: 20rem;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -104,9 +105,17 @@
 
   .user_image{
     width: 40px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .app_name_container{
+    z-index: 1000;
+    position: relative;
   }
 
   .other{
     width: 20%;
+    justify-content: center;
   }
 }
