@@ -3,10 +3,12 @@
 :root {
   --title-aqua-color: #64eebc;
   --text-white-color: #ffffff;
+  --font-family-thick: "Bebas Neue", cursive;
+  --font-family-thin: 'Barlow Condensed', sans-serif;
 }
 
 .main_container {
-  font-family: "Bebas Neue", cursive;
+  font-family: var(--font-family-thick);
   color: var(--text-white-color);
 }
 
@@ -27,7 +29,7 @@
 }
 
 .subtitle {
-font-family: 'Barlow Condensed', sans-serif;
+font-family: var(--font-family-thin);
   font-size: 20px;
   line-height: 20px;
   letter-spacing: 4px;

@@ -18,19 +18,42 @@
   flex-direction: column;
 }
 
-.main_container > span {
+.main_container > .span_main {
   text-align: end;
   margin: 25px;
   font-size: 20px;
 }
 
-.main_container > p {
+.main_container > .p_main, .main_container > .p_success {
   font-size: 20px;
   line-height: 20px;
   letter-spacing: 4px;
   color: var(--title-aqua-color);
   text-align: center;
   margin-bottom: 40px;
+}
+
+.main_container > .p_success{
+  font-size: 35px;
+}
+
+.main_container > .p_success >span{
+  font-family: var(--font-family-thin);
+}
+
+.p_subtitle{
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.success_message{
+   font-size: 18px;
+  letter-spacing: 4px;
+  text-align: center;
+  font-family: var(--font-family-thin);
+  margin-bottom: 100px;
+  text-transform: uppercase;
 }
 
 .image_input {
@@ -44,11 +67,6 @@
   justify-content: center;
   align-items: center;
 }
-
-/* .image_input:target {
-  background-color: transparent;
-  border: 4px solid #d0d7de;
-} */
 
 .input_text_info {
   display: flex;
@@ -98,7 +116,7 @@
   text-align: center;
   text-transform: uppercase;
   color: white;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-family-thin);
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
@@ -106,7 +124,7 @@
 }
 
 ::placeholder {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-family-thin);
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 4px;
@@ -115,7 +133,7 @@
 }
 
 .upload_button {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-family-thin);
   font-size: 18px;
   line-height: 19px;
   letter-spacing: 4px;
@@ -137,7 +155,7 @@
 
 .progress_bar {
   color: var(--text-white-color);
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-family-thin);
   font-size: 18px;
   letter-spacing: 4px;
   line-height: 19px;
@@ -163,13 +181,17 @@ position: relative;
 border: none;
 }
 
-.retry{
+.retry, .ready{
   display: flex;
   justify-content: flex-end;
 }
 
-.retry > p{
+.retry > p, .ready>p{
     cursor: pointer;
+}
+
+.ready>p{
+ color: var(--title-aqua-color);
 }
 
 

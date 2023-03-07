@@ -10,6 +10,7 @@ body {
   height: 0rem;
   transition: all 0.7s;
   overflow-y: hidden;
+    z-index: 100;
 }
 .view {
   padding: 10px;

@@ -1,11 +1,14 @@
 import axios from "axios";
 
-export const allMovies = async (setMovies, setError) => {
+export const allMovies = async (setMovies, setError, setMyMovies) => {
   try {
     let response = await axios.get(
       "https://api.themoviedb.org/3/movie/popular?api_key=6f26fd536dd6192ec8a57e94141f8b20"
     );
     setMovies(response.data.results);
+
+    const item = JSON.parse(window.localStorage.getItem("movies"));
+    setMyMovies(item);
   } catch (error) {
     setError(error);
   }
@@ -21,7 +24,14 @@ export const handlerClick = (id, classname) => {
   }
 };
 
-export const changeImage = (event, setCharging, setBackgroundColor, setCharged) => {
+export const changeImage = (
+  event,
+  setCharging,
+  setBackgroundColor,
+  setCharged,
+  setResult,
+  setStatus
+) => {
   if (event.target.files[0] !== undefined) {
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
@@ -30,11 +40,55 @@ export const changeImage = (event, setCharging, setBackgroundColor, setCharged) 
       setCharging(true);
       setBackgroundColor("#64eebc");
       if (element.target.result.includes("image")) {
-        setCharged(true);
+        setTimeout(() => setCharged("true"), 3100);
+        setStatus(true);
+        setResult(element.target.result);
       } else {
-        setCharged(false);
-        setTimeout(() => setBackgroundColor("red"), 3300);
+        setStatus(false);
+        setTimeout(() => {
+          setBackgroundColor("red");
+          setCharged("false");
+        }, 3100);
+        setResult("Error");
       }
     };
   }
+};
+
+export const handleSubmit = (title, result, setResult, setSuccess) => {
+  try {
+    if (result !== "Error" && title) {
+      // window.localStorage.clear();
+      const item = JSON.parse(window.localStorage.getItem("movies"));
+      if (item) {
+        item.push({ title, result });
+        window.localStorage.setItem("movies", JSON.stringify(item));
+      } else {
+        window.localStorage.setItem(
+          "movies",
+          JSON.stringify([{ title, result }])
+        );
+      }
+      setResult("Error");
+      setSuccess(true);
+    }
+  } catch (error) {
+    return "Error";
+  }
+};
+
+export const activeSubmit = (result, title) => {
+  if (result !== "Error" && title) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+export const deleteMovie = (title) => {
+  const item = JSON.parse(window.localStorage.getItem("movies"));
+
+  const filter = item.filter((ele) => ele.title !== title);
+
+  window.localStorage.setItem("movies", JSON.stringify(filter));
 };
