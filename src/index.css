@@ -4,12 +4,13 @@ body {
 }
 
 .dropdown_container {
-  position: absolute;
-  padding: 0px;
-  top: 50px;
-  height: 0rem;
-  transition: all 0.7s;
-  overflow-y: hidden;
+    position: absolute;
+    padding: 0px;
+    top: -20px;
+    left: -115px;
+    height: 0rem;
+    transition: all 0.7s;
+    overflow-y: hidden;
     z-index: 100;
 }
 .view {

@@ -23,7 +23,7 @@ const NavBar = () => {
         <AddMovie></AddMovie>
       </div>
       <div className={style.second_container}>
-        <div style={{ width: "5rem", height: "2rem", objectFit: "cover" }}>
+        <div >
           <span className={style.app_name}>LITE</span>
           <span className={style.app_name2}>FLIX</span>
         </div>
@@ -36,8 +36,10 @@ const NavBar = () => {
         </div>
       </div>
       <div className={style.other}>
-        <Bars3BottomRightIcon className={style.heroicons} />
-        <div>
+        <div className={style.menu}>
+          <Bars3BottomRightIcon className={style.heroicons} />
+        </div>
+        <div className={style.bell}>
           <div className={style.container_dot_1}>
             <div className={style.container_dot_2}></div>
             <FiBell size={28}></FiBell>

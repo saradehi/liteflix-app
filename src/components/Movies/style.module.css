@@ -39,6 +39,10 @@
   animation: arrow_animate 1s;
 }
 
+.main_dropdown{
+  position: relative;
+}
+
 .dropdown {
   display: flex;
   flex-direction: column;
@@ -74,6 +78,7 @@
   flex-direction: column;
   gap: 20px;
   width: 13rem;
+  min-height: 8rem;
 }
 
 .movie_container {
@@ -221,5 +226,11 @@
   }
   to {
     transform: rotate(359deg);
+  }
+}
+
+@media (max-width: 800px){
+  .main_container{
+    position: static;
   }
 }

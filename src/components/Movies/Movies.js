@@ -31,25 +31,29 @@ const Movies = () => {
           <BiChevronDown className={style.arrow_icon} size={25}></BiChevronDown>
         </p>
       </div>
-      <div id="dropdown_container" className="dropdown_container">
-        <div className={style.dropdown}>
-          <div className={style.point}>
-            <BsSuitDiamondFill></BsSuitDiamondFill>
+      <div className={style.main_dropdown}>
+        <div id="dropdown_container" className="dropdown_container">
+          <div className={style.dropdown}>
+            <div className={style.point}>
+              <BsSuitDiamondFill></BsSuitDiamondFill>
+            </div>
+            <p
+              onClick={() => setDropdown("POPULARES")}
+              style={{ fontFamily: dropdown === "POPULARES" && "Bebas Neue" }}
+            >
+              POPULARES{" "}
+              {dropdown === "POPULARES" && <CgCheck size={25}></CgCheck>}
+            </p>
+            <p
+              onClick={() => setDropdown("MIS PELICULAS")}
+              style={{
+                fontFamily: dropdown === "MIS PELICULAS" && "Bebas Neue",
+              }}
+            >
+              MIS PELÍCULAS{" "}
+              {dropdown === "MIS PELICULAS" && <CgCheck size={25}></CgCheck>}
+            </p>
           </div>
-          <p
-            onClick={() => setDropdown("POPULARES")}
-            style={{ fontFamily: dropdown === "POPULARES" && "Bebas Neue" }}
-          >
-            POPULARES{" "}
-            {dropdown === "POPULARES" && <CgCheck size={25}></CgCheck>}
-          </p>
-          <p
-            onClick={() => setDropdown("MIS PELICULAS")}
-            style={{ fontFamily: dropdown === "MIS PELICULAS" && "Bebas Neue" }}
-          >
-            MIS PELÍCULAS{" "}
-            {dropdown === "MIS PELICULAS" && <CgCheck size={25}></CgCheck>}
-          </p>
         </div>
       </div>
 
@@ -94,7 +98,12 @@ const Movies = () => {
                   }}
                 >
                   <div className={style.movie_main_container}>
-                  <div className={style.delete_mymovie} onClick={() => deleteMovie(ele.title)}><IoClose></IoClose></div>
+                    <div
+                      className={style.delete_mymovie}
+                      onClick={() => deleteMovie(ele.title)}
+                    >
+                      <IoClose></IoClose>
+                    </div>
                     <div className={style.movie_title}>
                       <div className={style.play_icon_div}>
                         <RxPlay className={style.play_icon}></RxPlay>

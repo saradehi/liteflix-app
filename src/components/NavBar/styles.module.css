@@ -3,6 +3,7 @@
   padding: 35px 80px;
   display: flex;
   justify-content: space-between;
+  width: 80vw;
 }
 
 .second_container,
@@ -79,3 +80,33 @@
   cursor: pointer;
 }
 
+@media (max-width: 800px){
+  .second_container{
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 80%;
+  }
+  .add_movie{
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .add_movie >p{
+    display: none;
+  }
+
+  .menu, .bell{
+    display: none;
+  }
+
+  .user_image{
+    width: 40px;
+  }
+
+  .other{
+    width: 20%;
+  }
+}
