@@ -57,26 +57,31 @@ const Movies = () => {
         </div>
       </div>
 
-      <div className={style.movies_list}>
-        {dropdown === "POPULARES"
-          ? movies?.slice(0, 4).map((element, index) => {
+        {dropdown === "POPULARES" ? (
+          <div className={style.movies_list}>
+            {movies?.slice(0, 4).map((element, index) => {
               return (
-                <div className={style.movies_main_container}>
+                <div
+                  className={style.movies_main_container}
+                  // style={{
+                  //   animationDelay: index -0.5 + "s",
+                  // }}
+                >
                   <div
                     className={style.movie_container}
                     key={index}
                     style={{
-                      animationDelay: index + "s",
+                      animationDuration: index === 0 ? index + 1 + "s" : index +0.8 + "s",
                       backgroundImage: `url('https://image.tmdb.org/t/p/w300/${element.poster_path}')`,
                     }}
                   >
-                    <div
-                      className={style.movie_main_container}
-                      style={{
-                        animationDelay: index + "s",
-                      }}
-                    >
-                      <div className={style.movie_title}>
+                    <div className={style.movie_main_container}>
+                      <div
+                        className={style.movie_title}
+                        // style={{
+                        //   animationDelay: "2s",
+                        // }}
+                      >
                         <div className={style.play_icon_div}>
                           <RxPlay className={style.play_icon}></RxPlay>
                         </div>
@@ -95,8 +100,11 @@ const Movies = () => {
                   </div>
                 </div>
               );
-            })
-          : myMovies?.slice(0, 4).map((ele, index) => {
+            })}
+          </div>
+        ) : (
+          <div className={style.movies_list}>
+            {myMovies?.slice(0, 4).map((ele, index) => {
               return (
                 <div
                   className={style.mymovie_container}
@@ -122,8 +130,9 @@ const Movies = () => {
                 </div>
               );
             })}
+          </div>)
+        }
       </div>
-    </div>
   );
 };
 
