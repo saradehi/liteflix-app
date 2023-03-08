@@ -3,7 +3,7 @@
   padding: 35px;
   display: flex;
   justify-content: space-between;
-  width: 80vw;
+  width: 90vw;
 }
 
 .second_container,
@@ -12,11 +12,17 @@
   align-items: center;
   gap: 15%;
   color: var(--text-white-color);
+  transition: all 0.6s;
+  animation: charging 4s ease-in-out;
+  overflow-x: hidden;
 }
 
 .other {
   gap: 30px;
+  width: 15rem;
+  justify-content: flex-end;
 }
+
 
 .app_name,
 .app_name2 {
@@ -31,16 +37,23 @@
 }
 
 .add_movie {
-  width: 20rem;
+  width: 26rem;
   display: flex;
   gap: 10px;
   align-items: center;
   font-size: 18px;
   letter-spacing: 5px;
   color: var(--text-white-color);
-  height: 1rem;
+  height: 2rem;
   cursor: pointer;
   transition: all 0.5s;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.icon_add_movie{
+  display: flex;
+width: fit-content;
 }
 
 .add_movie:hover{
@@ -105,17 +118,20 @@
 
   .user_image{
     width: 40px;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .app_name_container{
-    z-index: 1000;
-    position: relative;
   }
 
   .other{
     width: 20%;
     justify-content: center;
   }
+}
+
+@keyframes charging {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+
 }

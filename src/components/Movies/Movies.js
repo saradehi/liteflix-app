@@ -61,27 +61,35 @@ const Movies = () => {
         {dropdown === "POPULARES"
           ? movies?.slice(0, 4).map((element, index) => {
               return (
-                <div
-                  className={style.movie_container}
-                  key={index}
-                  style={{
-                    backgroundImage: `url('https://image.tmdb.org/t/p/w300/${element.poster_path}')`,
-                  }}
-                >
-                  <div className={style.movie_main_container}>
-                    <div className={style.movie_title}>
-                      <div className={style.play_icon_div}>
-                        <RxPlay className={style.play_icon}></RxPlay>
-                      </div>
-                      <p className={style.title}>{element.original_title}</p>
-                    </div>
-                    <div className={style.display_info}>
-                      <div className={style.movie_info}>
-                        <div>
-                          <AiFillStar className={style.icon}></AiFillStar>
-                          <p>{element.vote_average}</p>
+                <div className={style.movies_main_container}>
+                  <div
+                    className={style.movie_container}
+                    key={index}
+                    style={{
+                      animationDelay: index + "s",
+                      backgroundImage: `url('https://image.tmdb.org/t/p/w300/${element.poster_path}')`,
+                    }}
+                  >
+                    <div
+                      className={style.movie_main_container}
+                      style={{
+                        animationDelay: index + "s",
+                      }}
+                    >
+                      <div className={style.movie_title}>
+                        <div className={style.play_icon_div}>
+                          <RxPlay className={style.play_icon}></RxPlay>
                         </div>
-                        <p>{element.release_date.slice(0, 4)}</p>
+                        <p className={style.title}>{element.original_title}</p>
+                      </div>
+                      <div className={style.display_info}>
+                        <div className={style.movie_info}>
+                          <div>
+                            <AiFillStar className={style.icon}></AiFillStar>
+                            <p>{element.vote_average}</p>
+                          </div>
+                          <p>{element.release_date.slice(0, 4)}</p>
+                        </div>
                       </div>
                     </div>
                   </div>

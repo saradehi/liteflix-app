@@ -2,6 +2,7 @@
   position: fixed;
   right: 40px;
   width: 15rem;
+  height: 73%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +16,16 @@
   font-family: "Barlow Condensed", sans-serif;
   line-height: 20px;
   letter-spacing: 4px;
+  height: 4rem;
+  overflow-x: hidden;
+}
+
+.container_select > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  animation: charging_movies 3s ease;
 }
 .selected {
   font-family: "Bebas Neue";
@@ -39,7 +50,7 @@
   animation: arrow_animate 1s;
 }
 
-.main_dropdown{
+.main_dropdown {
   position: relative;
 }
 
@@ -78,18 +89,31 @@
   flex-direction: column;
   gap: 20px;
   width: 15rem;
+  height: fit-content;
+  animation: charge 3.9s;
+  overflow-x: hidden;
+}
+
+.movies_main_container {
   min-height: 8rem;
 }
 
 .movie_container {
   width: 100%;
-  height: 8rem;
+  height: 100%;
+  top: 0;
   overflow: hidden;
   background-position: -40px -45px;
   border-radius: 5px;
   border-radius: 5px;
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 70px 100px 20px;
+  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 70px 100px 20px; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* animation: charging_movies 3s ease; */
+    animation-name: charging ;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 
 .mymovie_container {
@@ -115,8 +139,8 @@
   transition: transform 0.6s;
 }
 
-.delete_mymovie:hover{
-  transform: scale(1.1);  
+.delete_mymovie:hover {
+  transform: scale(1.1);
 }
 
 .movie_main_container {
@@ -138,6 +162,10 @@
     hsla(0, 0%, 12%, 0.616) 89%,
     hsla(0, 0%, 0%, 0.596) 100%
   );
+  transition: all 0.6s;
+  animation-name: charging_info;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
 }
 
 .movie_title {
@@ -228,8 +256,59 @@
   }
 }
 
-@media (max-width: 800px){
-  .main_container{
+@keyframes charging_movies {
+  from {
+    height: 0;
+
+  }
+  to {
+    height: 100%;
+
+  }
+}
+
+@keyframes charging {
+  from {
+    width: 0;
+
+  }
+  to {
+    width: 100%;
+
+  }
+}
+
+@keyframes charging_info {
+  from {
+    /* top: 150px; */
+    font-size: 0px;
+  }
+  to {
+    /* top: 0px; */
+    font-size: 14px;
+  }
+}
+
+@keyframes charge {
+  0%{
+    height: 0;
+  }
+  25%{
+    height: 8rem;
+  }
+  50%{
+    height: 17.4rem;
+  }
+  75%{
+    height: 26.5rem;
+  }
+  100%{
+    height: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .main_container {
     position: static;
     width: 20rem;
     margin-bottom: 40px;

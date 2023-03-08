@@ -3,20 +3,26 @@ body {
   padding: 0;
 }
 
+
+/* MOVIES */
+
 .dropdown_container {
-    position: absolute;
-    padding: 0px;
-    top: -20px;
-    left: -115px;
-    height: 0rem;
-    transition: all 0.5s;
-    overflow-y: hidden;
-    z-index: 100;
+  position: absolute;
+  padding: 0px;
+  top: -20px;
+  left: -115px;
+  height: 0rem;
+  transition: all 0.5s;
+  overflow-y: hidden;
+  z-index: 1;
 }
 .view {
   padding: 10px;
   height: 7rem;
 }
+
+
+/* NAV BAR */
 
 .hide_add_movie {
   height: 0vh;
@@ -38,6 +44,8 @@ body {
 .show_add_movie {
   height: 100vh;
 }
+
+/* ADD MOVIE */
 
 .image_input {
   position: relative;
@@ -69,24 +77,22 @@ body {
   background-color: #d0d7de34;
 }
 
-.container_bar2{
+.container_bar2 {
   height: 100%;
   width: 100%;
   position: relative;
   animation: charging 3500ms;
 }
 
-.error_charge{
+.error_charge {
   background-color: red;
 }
 
 @keyframes charging {
-  from{
+  from {
     width: 0%;
   }
-  to{
+  to {
     width: 100%;
   }
-  
 }
-

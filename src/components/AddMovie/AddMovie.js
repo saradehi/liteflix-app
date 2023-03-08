@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./style.module.css";
+import styles from "../NavBar/styles.module.css"
 import "../../index.css";
 import { RxCross1 } from "react-icons/rx";
 import { HiPaperClip } from "react-icons/hi2";
@@ -9,6 +10,7 @@ import {
   handleSubmit,
   handlerClick,
 } from "../../controllers/movies";
+import imageUser from "../../img/no-image.jpg";
 
 const AddMovie = () => {
   const [title, setTitle] = useState("");
@@ -53,6 +55,15 @@ const AddMovie = () => {
         >
           <RxCross1 className={style.close_icon}></RxCross1>
         </span>
+        {window.screen.width < 800 && (
+          <div className={style.nav_div}>
+            <div className={styles.app_name_container}>
+              <span className={styles.app_name}>LITE</span>
+              <span className={styles.app_name2}>FLIX</span>
+            </div>
+            <img className={styles.user_image} src={imageUser} alt="user"></img>
+          </div>
+        )}
         {!success ? (
           <>
             <p className={style.p_main}>AGREGAR PELÍCULA</p>

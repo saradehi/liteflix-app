@@ -26,7 +26,9 @@ const NavBar = () => {
           onClick={() => handlerClick("hide_add_movie", "show_add_movie")}
           className={style.add_movie}
         >
-          <AiOutlinePlus size={22}></AiOutlinePlus>
+          <div className={style.icon_add_movie}>
+            <AiOutlinePlus size={22}></AiOutlinePlus>
+          </div>
           <p>AGREGAR PELÍCULA</p>
         </div>
       </div>
