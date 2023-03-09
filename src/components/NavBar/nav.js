@@ -1,5 +1,4 @@
 import React from "react";
-import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { FiBell } from "react-icons/fi";
 import style from "./styles.module.css";
