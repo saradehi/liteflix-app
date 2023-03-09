@@ -250,10 +250,12 @@ border: none;
     gap: 80px;
   }
 
-  .p_subtitle{
+  /* .p_subtitle{
     margin-top: 80px;
-  }
-
+  } */
+.success_message{
+  margin-bottom: 0;
+}
   .nav_div{
     display: flex;
     justify-content: flex-end;
