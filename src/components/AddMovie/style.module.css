@@ -241,7 +241,7 @@ border: none;
   }
 
   .p_success{
-    visibility: hidden;
+    display: none;
   }
 
   .success_info_gap{
@@ -250,9 +250,9 @@ border: none;
     gap: 80px;
   }
 
-  /* .p_subtitle{
+  .p_subtitle{
     margin-top: 80px;
-  } */
+  }
 .success_message{
   margin-bottom: 0;
 }
