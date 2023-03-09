@@ -26,8 +26,8 @@
 .second_container {
   position: absolute;
   left: 10%;
-  bottom: 25%;
-    overflow-y: hidden;
+  bottom: 20%;
+  overflow-y: hidden;
 }
 
 .subtitle {
@@ -46,20 +46,42 @@
   font-size: 120px;
   letter-spacing: 20px;
   font-weight: bold;
+  display: flex;
+  overflow-y: hidden;
 }
 
-.movie_title>p{
+.p_title_first,
+.p_title_second {
   margin: 0;
+  position: relative;
+  overflow-y: hidden;
 }
 
+.p_title_first {
+  animation: charge_title_first 2s ease-in;
+}
+
+.p_title_second {
+  animation: charge_title_second 2s ease-in;
+}
+
+.button_list {
+  display: flex;
+}
+.button_listone{
+  overflow: hidden;
+  width: 15rem;
+
+}
 .button_container {
   display: flex;
   gap: 60px;
   padding-left: 10px;
   align-items: center;
+  margin-top: 20px;
 }
 
-.button_container > button {
+.button_app_play, .button_app_list {
   width: 248px;
   height: 56px;
   display: flex;
@@ -70,12 +92,18 @@
   font-family: "Bebas Neue";
 }
 
+.button_app_list {
+  position: relative;
+}
+
 .button_app_play {
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 4px;
   background-color: #242424;
   border: none;
+  overflow-x: hidden;
+  animation: animation_button_play 2s;
 }
 
 .button_app_list {
@@ -83,7 +111,106 @@
   line-height: 22px;
   letter-spacing: 4px;
   background-color: rgba(255, 255, 255, 0.075);
-  border: 1px solid var(--text-white-color);
+  /* border: 1px solid var(--text-white-color); */
+  border: none;
+  overflow: hidden;
+}
+.button_app_list span {
+  position: absolute;
+  top: 0;
+  background: #ffffff;
+}
+
+.button_app_list span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  animation: animation_border_1 2s;
+}
+
+.button_app_list span:nth-child(2) {
+  width: 100%;
+  height: 2px;
+  top: 96%;
+  right: 0;
+  animation: animation_border_2 2s;
+}
+
+.button_app_list span:nth-child(3) {
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation: animation_border_3 2s;
+}
+
+.button_app_list span:nth-child(4) {
+  width: 2px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  animation: animation_border_4 2s;
+}
+
+.info_button_list{
+  position: relative;
+  left: 0px;
+  animation: animation_info_list 2s ease-in;
+}
+
+@keyframes animation_button_play {
+  from{
+    width: 0;
+  }
+  to{
+width: 100%;
+  }
+}
+
+@keyframes animation_info_list {
+  from{
+    left: -200px;
+  }
+  top{
+    left: 0;
+  }
+}
+
+@keyframes animation_border_1 {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes animation_border_2 {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes animation_border_3 {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes animation_border_4 {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
 }
 
 @keyframes back-load {
@@ -97,10 +224,36 @@
 }
 
 @keyframes subtitle {
-  from{
-      top: -50px;
-  } to{
-      top: 0px;
+  from {
+    top: -50px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes charge_title {
+  from {
+    top: -150px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes charge_title_first {
+  from {
+    top: -140px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes charge_title_second {
+  from {
+    top: 140px;
+  }
+  to {
+    top: 0;
   }
 }
 
@@ -150,7 +303,7 @@
 
   .second_container {
     position: static;
-        width: 80%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,14 +314,20 @@
     flex-direction: column;
   }
 
-  .button_app_list{
+  .button_app_list {
     background-color: transparent;
   }
 }
 
 @media (max-width: 600px) {
-  .movie_title{
+  .movie_title {
     font-size: 60px;
+        padding-left: 10%;
   }
 }
 
+@media (max-width: 400px) {
+.movie_title{
+  font-size: 55px;
+}  
+}

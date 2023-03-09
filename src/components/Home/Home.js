@@ -26,15 +26,28 @@ const Home = () => {
             </span>
           </div>
           <div className={style.movie_title}>
-            <p>BABYLON</p>
+            <p className={style.p_title_first}>BABY</p>
+            <p className={style.p_title_second}>LON</p>
           </div>
           <div className={style.button_container}>
-            <button className={style.button_app_play}>
-              <FiPlay size={15}></FiPlay> REPRODUCIR
-            </button>
-            <button className={style.button_app_list}>
-              <AiOutlinePlus size={15}></AiOutlinePlus> MI LISTA
-            </button>
+            <div className={style.button_listone}>
+              <button className={style.button_app_play}>
+                <div className={style.info_button_list}>
+                  <FiPlay size={15}></FiPlay> REPRODUCIR
+                </div>
+              </button>
+            </div>
+            <div className={style.button_list}>
+              <button className={style.button_app_list}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div className={style.info_button_list}>
+                  <AiOutlinePlus size={15}></AiOutlinePlus> MI LISTA
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <Movies></Movies>

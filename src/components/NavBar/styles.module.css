@@ -4,18 +4,20 @@
   display: flex;
   justify-content: space-between;
   width: 90vw;
+  gap: 20px;
 }
 
 .second_container,
 .other {
   display: flex;
   align-items: center;
-  gap: 15%;
+  gap: 90px;
   color: var(--text-white-color);
   transition: all 0.6s;
-  animation: charging 4s ease-in-out;
   overflow-x: hidden;
+  animation: charging 4s ease-in-out;
 }
+
 
 .other {
   gap: 30px;
@@ -99,6 +101,7 @@ width: fit-content;
     flex-direction: row-reverse;
     justify-content: flex-end;
     width: 80%;
+    gap: 20%;
   }
   .add_movie{
     border: 1px solid white;

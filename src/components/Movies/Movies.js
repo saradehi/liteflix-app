@@ -71,16 +71,16 @@ const Movies = () => {
                     className={style.movie_container}
                     key={index}
                     style={{
-                      animationDuration: index === 0 ? index + 1 + "s" : index +0.8 + "s",
+                      animationDuration: index === 0 ? index + 1.2 + "s" : index *1.5/3+1.2 + "s",
                       backgroundImage: `url('https://image.tmdb.org/t/p/w300/${element.poster_path}')`,
                     }}
                   >
                     <div className={style.movie_main_container}>
                       <div
                         className={style.movie_title}
-                        // style={{
-                        //   animationDelay: "2s",
-                        // }}
+                        style={{
+                          animationDuration: "2s",
+                        }}
                       >
                         <div className={style.play_icon_div}>
                           <RxPlay className={style.play_icon}></RxPlay>
@@ -120,7 +120,12 @@ const Movies = () => {
                     >
                       <IoClose></IoClose>
                     </div>
-                    <div className={style.movie_title}>
+                    <div
+                      className={style.movie_title}
+                      style={{
+                        animationDuration: "1s",
+                      }}
+                    >
                       <div className={style.play_icon_div}>
                         <RxPlay className={style.play_icon}></RxPlay>
                       </div>

@@ -90,12 +90,13 @@
   flex-direction: column;
   gap: 20px;
   width: 15rem;
-  animation: first_charge 1s ease-in;
+  /* animation: first_charge 1s ease-in; */
   overflow-y: hidden;
 }
 
 .movies_main_container {
   min-height: 8rem;
+  height: 9rem;
   width: 100%;
   overflow-y: hidden;
 }
@@ -114,7 +115,6 @@
   position: relative;
   left: 0;
     animation-name: charging ;
-    animation-duration: 1s;
     animation-timing-function: ease-in;
 }
 
@@ -124,6 +124,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px -60px;
+    position: relative;
+  left: 0;
+  overflow-y: hidden;
+    animation-name: charging ;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
 }
 
 .delete_mymovie {
@@ -177,7 +183,6 @@
   width: 100%;
   position: relative;
     animation-name: charging_info;
-  animation-duration: 4s;
   animation-timing-function: ease-in;
 }
 .display_info {
@@ -263,22 +268,26 @@
 
 @keyframes charging {
   0%{
-    left: -150px;
-    top: -150px;
+    /* left: -150px;
+    top: -150px; */
+    opacity: 0;
   }
   100%{
-    left: 0;
-    top: 0;
+    opacity: 1;
+    /* left: 0;
+    top: 0; */
   }
 }
 
 @keyframes charging_info {
   from {
-    top: 200px;
+    /* top: 200px; */
     /* font-size: 0px; */
+    opacity: 0;
   }
   to {
-    top: 0px;
+    opacity: 1;
+    /* top: 0px; */
     /* font-size: 14px; */
   }
 }
