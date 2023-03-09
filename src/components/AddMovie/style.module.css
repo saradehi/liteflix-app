@@ -24,7 +24,7 @@
   font-size: 20px;
 }
 
-.main_container > .p_main, .main_container > .p_success {
+.main_container > .p_main, .success_info_gap > .p_success {
   font-size: 20px;
   line-height: 20px;
   letter-spacing: 4px;
@@ -33,11 +33,17 @@
   margin-bottom: 40px;
 }
 
-.main_container > .p_success{
+.success_info_gap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.success_info_gap > .p_success{
   font-size: 35px;
 }
 
-.main_container > .p_success >span{
+.success_info_gap > .p_success >span{
   font-family: var(--font-family-thin);
 }
 
@@ -54,6 +60,8 @@
   font-family: var(--font-family-thin);
   margin-bottom: 100px;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
 }
 
 .image_input {
