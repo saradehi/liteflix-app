@@ -15,6 +15,7 @@
   color: var(--text-white-color);
   transition: all 0.6s;
   overflow-x: hidden;
+  overflow-y: hidden;
   animation: charging 4s ease-in-out;
 }
 
@@ -95,6 +96,16 @@ width: fit-content;
   width: 33px;
   cursor: pointer;
 }
+@keyframes charging {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+
+}
+
 
 @media (max-width: 800px){
   .second_container{
@@ -102,6 +113,7 @@ width: fit-content;
     justify-content: flex-end;
     width: 80%;
     gap: 20%;
+    animation: charge_nav_media 2s;
   }
   .add_movie{
     border: 1px solid white;
@@ -126,15 +138,15 @@ width: fit-content;
   .other{
     width: 20%;
     justify-content: center;
+    animation: charge_nav_media 2s;
+  }
+  @keyframes charge_nav_media {
+  from{
+    height: 0;
+  }
+  to{
+    height: 100%;
   }
 }
-
-@keyframes charging {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-
 }
+
