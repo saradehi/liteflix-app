@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 .container_select {
   display: flex;
@@ -20,8 +19,9 @@
   height: 4rem;
   width: 100%;
   overflow-x: hidden;
-border-radius: 20px 20px 0px 0px;
-box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.055) 0px 18px 36px -18px inset;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset,
+    rgba(0, 0, 0, 0.055) 0px 18px 36px -18px inset;
 }
 
 .container_select > p {
@@ -30,8 +30,7 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
   align-items: center;
   overflow-x: hidden;
   position: relative;
-  animation: charging_info 1s ease-out ;
-  
+  animation: charging_info 1s ease-out;
 }
 .selected {
   font-family: "Bebas Neue";
@@ -119,8 +118,8 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
   overflow-y: hidden;
   position: relative;
   left: 0;
-    animation-name: charging ;
-    animation-timing-function: ease-in;
+  animation-name: charging;
+  animation-timing-function: ease-in;
 }
 
 .mymovie_container {
@@ -129,12 +128,13 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px -60px;
-    position: relative;
+  position: relative;
   left: 0;
   overflow-y: hidden;
-    animation-name: charging ;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
+  animation-name: charging;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  border-radius: 10px;
 }
 
 .delete_mymovie {
@@ -160,7 +160,7 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
   display: flex;
   flex-direction: column;
   height: 100%;
-  width:100%;
+  width: 100%;
   font-size: 14px;
   line-height: 14px;
   text-align: center;
@@ -176,7 +176,6 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
     hsla(0, 0%, 0%, 0.596) 100%
   );
   transition: all 0.6s;
-
 }
 
 .movie_title {
@@ -187,7 +186,7 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
   height: 100%;
   width: 100%;
   position: relative;
-    animation-name: charging_info;
+  animation-name: charging_info;
   animation-timing-function: ease-in;
 }
 .display_info {
@@ -272,12 +271,12 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
 }
 
 @keyframes charging {
-  0%{
+  0% {
     /* left: -150px;
     top: -150px; */
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
     /* left: 0;
     top: 0; */
@@ -313,11 +312,12 @@ box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset, rgba(0, 0, 0, 0.05
   100%{
     height: 100%;
   } */
-from{
-  width: 0;
-} to{
-  width: 100%;
-}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @media (max-width: 800px) {
@@ -326,7 +326,7 @@ from{
     width: 20rem;
     margin-bottom: 40px;
   }
-  .container_select{
+  .container_select {
     box-shadow: none;
   }
 }
