@@ -20,8 +20,8 @@
   width: 100%;
   overflow-x: hidden;
   border-radius: 20px 20px 0px 0px;
-  box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset,
-    rgba(0, 0, 0, 0.055) 0px 18px 36px -18px inset;
+  /* box-shadow: rgba(5, 5, 5, 0.151) 10px 100px 80px -90px inset,
+    rgba(0, 0, 0, 0.055) 0px 18px 36px -18px inset; */
 }
 
 .container_select > p {

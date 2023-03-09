@@ -10,10 +10,8 @@ import AddMovie from "../AddMovie/AddMovie";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState()
-console.log(popularMovies)
 
 const title = popularMovies && popularMovies.original_title.split(' ')
-console.log(title)
 
   useEffect(() => {
     document.title = "Liteflix";
