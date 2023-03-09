@@ -142,10 +142,10 @@ width: fit-content;
   }
   @keyframes charge_nav_media {
   from{
-    height: 0;
+    opacity: 0;
   }
   to{
-    height: 100%;
+    opacity: 1;
   }
 }
 }
