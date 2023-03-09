@@ -62,6 +62,7 @@ const Movies = () => {
             {movies?.slice(0, 4).map((element, index) => {
               return (
                 <div
+                  key={index}
                   className={style.movies_main_container}
                   // style={{
                   //   animationDelay: index -0.5 + "s",
@@ -69,9 +70,11 @@ const Movies = () => {
                 >
                   <div
                     className={style.movie_container}
-                    key={index}
                     style={{
-                      animationDuration: index === 0 ? index + 1.2 + "s" : index *1.5/3+1.2 + "s",
+                      animationDuration:
+                        index === 0
+                          ? index + 1.2 + "s"
+                          : (index * 1.5) / 3 + 1.2 + "s",
                       backgroundImage: `url('https://image.tmdb.org/t/p/w300/${element.poster_path}')`,
                     }}
                   >

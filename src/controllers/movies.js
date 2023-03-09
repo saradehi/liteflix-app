@@ -14,6 +14,17 @@ export const allMovies = async (setMovies, setError, setMyMovies) => {
   }
 };
 
+export const popularMovie = async (setPopularMovie, setError) => {
+  try {
+    let response = await axios.get(
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=6f26fd536dd6192ec8a57e94141f8b20"
+    );
+    setPopularMovie(response.data.results[4]);
+  } catch (error) {
+    setError(error)
+  }
+};
+
 export const handlerClick = (id, classname) => {
   const dropdown = document.getElementById(id);
 

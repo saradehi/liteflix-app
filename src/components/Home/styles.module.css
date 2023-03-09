@@ -21,6 +21,8 @@
   height: 100%;
   object-fit: cover;
   animation: back-load 10s;
+  position: relative;
+  left: -10%;
 }
 
 .second_container {
@@ -47,6 +49,7 @@
   letter-spacing: 20px;
   font-weight: bold;
   display: flex;
+  flex-direction: column;
   overflow-y: hidden;
 }
 
@@ -68,10 +71,9 @@
 .button_list {
   display: flex;
 }
-.button_listone{
+.button_listone {
   overflow: hidden;
   width: 15rem;
-
 }
 .button_container {
   display: flex;
@@ -81,7 +83,8 @@
   margin-top: 20px;
 }
 
-.button_app_play, .button_app_list {
+.button_app_play,
+.button_app_list {
   width: 248px;
   height: 56px;
   display: flex;
@@ -153,26 +156,26 @@
   animation: animation_border_4 2s;
 }
 
-.info_button_list{
+.info_button_list {
   position: relative;
   left: 0px;
   animation: animation_info_list 2s ease-in;
 }
 
 @keyframes animation_button_play {
-  from{
+  from {
     width: 0;
   }
-  to{
-width: 100%;
+  to {
+    width: 100%;
   }
 }
 
 @keyframes animation_info_list {
-  from{
+  from {
     left: -200px;
   }
-  top{
+  top {
     left: 0;
   }
 }
@@ -262,7 +265,7 @@ width: 100%;
     height: 100vh;
     position: absolute;
     left: -250px;
-    top: 100px;
+    top: 150px;
     animation: none;
   }
 
@@ -317,17 +320,38 @@ width: 100%;
   .button_app_list {
     background-color: transparent;
   }
+  .movie_title{
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
   .movie_title {
     font-size: 60px;
-        padding-left: 10%;
+    padding-left: 10%;
+  }
+  .image {
+    left: -60%;
+  }
+}
+
+@media (max-width: 550px){
+  .image {
+    left: -70%;
+  }
+}
+
+@media (max-width: 450px){
+  .image {
+    left: -80%;
   }
 }
 
 @media (max-width: 400px) {
-.movie_title{
-  font-size: 55px;
-}  
+  .movie_title {
+    font-size: 55px;
+  }
+  .image{
+    left: -90%;
+  }
 }

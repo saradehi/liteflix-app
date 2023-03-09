@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./styles.module.css";
-import { allMovies } from "../../controllers/movies";
+import { allMovies, popularMovie } from "../../controllers/movies";
 import back from "../../img/back1.png";
 import NavBar from "../NavBar/nav";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -9,15 +9,29 @@ import Movies from "../Movies/Movies";
 import AddMovie from "../AddMovie/AddMovie";
 
 const Home = () => {
+  const [popularMovies, setPopularMovies] = useState()
+console.log(popularMovies)
+
+const title = popularMovies && popularMovies.original_title.split(' ')
+console.log(title)
 
   useEffect(() => {
-    document.title = "Liteflix"
-  }, [])
+    document.title = "Liteflix";
+    popularMovie(setPopularMovies);
+  }, []);
 
   return (
     <div className={style.main_container}>
       <div className={style.image_div}>
-        <img className={style.image} src={back} alt="img" />
+        <img
+          className={style.image}
+          // src={back}
+          src={
+            popularMovies &&
+            `https://image.tmdb.org/t/p/w1280${popularMovies.backdrop_path}`
+          }
+          alt="img"
+        />
         <div className={style.background}></div>
       </div>
 
@@ -31,8 +45,25 @@ const Home = () => {
             </span>
           </div>
           <div className={style.movie_title}>
-            <p className={style.p_title_first}>BABY</p>
-            <p className={style.p_title_second}>LON</p>
+            {title && title.length === 1 ? (
+              <p className={style.p_title_first}>
+                {title[0]}
+              </p>
+            ) : (
+              <>
+                {" "}
+                <p className={style.p_title_first}>
+                  {title?.length > 3
+                    ? title.slice(0, 2).join(" ")
+                    : title && title[0]}
+                </p>
+                <p className={style.p_title_second}>
+                  {title?.length > 3
+                    ? title.slice(2).join(" ")
+                    : title && title[1]}
+                </p>
+              </>
+            )}
           </div>
           <div className={style.button_container}>
             <div className={style.button_listone}>

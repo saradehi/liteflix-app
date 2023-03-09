@@ -3,8 +3,9 @@
   padding: 35px;
   display: flex;
   justify-content: space-between;
-  width: 90vw;
+  width: 100vw;
   gap: 20px;
+  background: rgba(255, 255, 255, 0) linear-gradient(to top, rgba(0, 0, 0, 0) 10%, rgba(15, 15, 15, 0.322) 40%, rgba(0, 0, 0, 0.459) 75%, rgba(12, 12, 12, 0.514) 100%) repeat scroll 0 0;
 }
 
 .second_container,
@@ -21,6 +22,7 @@
 
 
 .other {
+  margin-right: 10%;
   gap: 30px;
   width: 15rem;
   justify-content: flex-end;
