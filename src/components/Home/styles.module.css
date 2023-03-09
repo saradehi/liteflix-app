@@ -297,6 +297,7 @@
     background-color: #242424;
     position: relative;
     z-index: -100;
+    box-shadow: none;
   }
 
   .main_container > .movies_div_container {
