@@ -9,6 +9,11 @@ import Movies from "../Movies/Movies";
 import AddMovie from "../AddMovie/AddMovie";
 
 const Home = () => {
+
+  useEffect(() => {
+    document.title = "Liteflix"
+  }, [])
+
   return (
     <div className={style.main_container}>
       <div className={style.image_div}>
