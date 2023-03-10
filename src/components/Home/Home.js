@@ -17,74 +17,76 @@ const title = popularMovies && popularMovies.original_title.split(' ')
   }, []);
 
   return (
-    <div className={style.main_container}>
-      <div className={style.image_div}>
-        <img
-          className={style.image}
-          // src={back}
-          src={
-            popularMovies &&
-            `https://image.tmdb.org/t/p/w1280${popularMovies.backdrop_path}`
-          }
-          alt="img"
-        />
-        <div className={style.background}></div>
-      </div>
+    <>
+      {popularMovies && (
+        <div className={style.main_container}>
+          <div className={style.image_div}>
+            <img
+              className={style.image}
+              // src={back}
+              src={
+                popularMovies &&
+                `https://image.tmdb.org/t/p/w1280${popularMovies.backdrop_path}`
+              }
+              alt="img"
+            />
+            <div className={style.background}></div>
+          </div>
 
-      <NavBar></NavBar>
-      <div className={style.movies_div_container}>
-        <div className={style.second_container}>
-          <div className={style.subtitle}>
-            ORIGINAL DE{" "}
-            <span style={{ fontWeight: 900, fontFamily: "Bebas Neue" }}>
-              LITEFLIX
-            </span>
-          </div>
-          <div className={style.movie_title}>
-            {title && title.length === 1 ? (
-              <p className={style.p_title_first}>
-                {title[0]}
-              </p>
-            ) : (
-              <>
-                {" "}
-                <p className={style.p_title_first}>
-                  {title?.length > 3
-                    ? title.slice(0, 2).join(" ")
-                    : title && title[0]}
-                </p>
-                <p className={style.p_title_second}>
-                  {title?.length > 3
-                    ? title.slice(2).join(" ")
-                    : title && title[1]}
-                </p>
-              </>
-            )}
-          </div>
-          <div className={style.button_container}>
-            <div className={style.button_listone}>
-              <button className={style.button_app_play}>
-                <div className={style.info_button_list}>
-                  <FiPlay size={15}></FiPlay> REPRODUCIR
+          <NavBar></NavBar>
+          <div className={style.movies_div_container}>
+            <div className={style.second_container}>
+              <div className={style.subtitle}>
+                ORIGINAL DE{" "}
+                <span style={{ fontWeight: 900, fontFamily: "Bebas Neue" }}>
+                  LITEFLIX
+                </span>
+              </div>
+              <div className={style.movie_title}>
+                {title && title.length === 1 ? (
+                  <p className={style.p_title_first}>{title[0]}</p>
+                ) : (
+                  <>
+                    {" "}
+                    <p className={style.p_title_first}>
+                      {title?.length > 3
+                        ? title.slice(0, 2).join(" ")
+                        : title && title[0]}
+                    </p>
+                    <p className={style.p_title_second}>
+                      {title?.length > 3
+                        ? title.slice(2).join(" ")
+                        : title && title[1]}
+                    </p>
+                  </>
+                )}
+              </div>
+              <div className={style.button_container}>
+                <div className={style.button_listone}>
+                  <button className={style.button_app_play}>
+                    <div className={style.info_button_list}>
+                      <FiPlay size={15}></FiPlay> REPRODUCIR
+                    </div>
+                  </button>
                 </div>
-              </button>
-            </div>
-            <div className={style.button_list}>
-              <button className={style.button_app_list}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <div className={style.info_button_list}>
-                  <AiOutlinePlus size={15}></AiOutlinePlus> MI LISTA
+                <div className={style.button_list}>
+                  <button className={style.button_app_list}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div className={style.info_button_list}>
+                      <AiOutlinePlus size={15}></AiOutlinePlus> MI LISTA
+                    </div>
+                  </button>
                 </div>
-              </button>
+              </div>
             </div>
+            <Movies></Movies>
           </div>
         </div>
-        <Movies></Movies>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
